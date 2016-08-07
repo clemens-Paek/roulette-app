@@ -1,6 +1,8 @@
+/logs
 /target
 .project
 .DS_Store
+.springBeans
 .classpath
 .settings/
 .externalToolBuilders
