@@ -9,23 +9,28 @@
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-<title>welcome mobile index.jsp!!<!-- Welcome to the roulette world!! --></title>
+<title>Welcome to the roulette!!</title>
 </head>
 <body>
 
-<div data-role="page">
-	<div data-role="header">
-		<h1>Welcome To My Homepage</h1>
+<div data-role="page" id="mainPage">
+	<div data-role="header" data-theme="b" data-position="fixed">
+		<h1>점심 메뉴 룰렛</h1>
+	</div>
+	
+	<div data-role="main" class="ui-content" style="padding-top: 2em;">
+		<a href="#goToRoulette" class="ui-btn">룰렛 돌리기</a>
 	</div>
 	
 	<div data-role="main" class="ui-content">
-		<p>I Am Now A Mobile Developer!!</p>
+		<a href="#goToMenuList" class="ui-btn">메뉴 추가하기</a>
 	</div>
 	
-	<div data-role="footer">
+	<!-- <div data-role="footer">
 		<h1>Footer Text</h1>
-	</div>
+	</div> -->
 </div>
 
+<jsp:include page="mobile_menulist.jsp" flush="false" />
 </body>
 </html>

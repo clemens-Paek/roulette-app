@@ -1,4 +1,4 @@
-package com.pshyun.reoulette.home.control;
+package com.pshyun.roulette.home.control;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.mobile.device.Device;
@@ -16,8 +16,10 @@ public class HomeController {
 		if (device.isMobile()) {
 			return "mindex";
 		} else if (device.isTablet()) {
+			//return "tindex";
 			return "mindex";
 		} else {
+			//return "index";
 			return "mindex";
 		}
 	}

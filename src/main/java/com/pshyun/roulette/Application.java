@@ -1,4 +1,4 @@
-package com.pshyun.reoulette;
+package com.pshyun.roulette;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

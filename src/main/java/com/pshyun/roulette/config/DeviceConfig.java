@@ -1,4 +1,4 @@
-package com.pshyun.reoulette.config;
+package com.pshyun.roulette.config;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
-public class DeviceConfiguration {
+public class DeviceConfig {
 	
 	@Bean
 	public DeviceResolverHandlerInterceptor deviceResolverHandlerInterceptor() {
@@ -38,8 +38,10 @@ public class DeviceConfiguration {
 		delegate.setPrefix("/WEB-INF/views/");
 		delegate.setSuffix(".jsp");
 		LiteDeviceDelegatingViewResolver resolver = new LiteDeviceDelegatingViewResolver(delegate);
+		/*
 		resolver.setMobilePrefix("mobile/");
 		resolver.setTabletPrefix("tablet/");
+		*/
 		return resolver;
 	}
 	

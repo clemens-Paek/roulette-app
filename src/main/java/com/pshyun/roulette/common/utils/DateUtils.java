@@ -1,4 +1,4 @@
-package com.pshyun.reoulette.common.utils;
+package com.pshyun.roulette.common.utils;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
