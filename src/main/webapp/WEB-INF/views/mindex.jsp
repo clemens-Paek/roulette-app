@@ -9,13 +9,16 @@
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-<title>Welcome to the roulette!!</title>
+	
+	<link rel="stylesheet" href="../resources/css/roulette.mobile.css" />
+	
+    <title>Welcome to the roulette!!</title>
 </head>
 <body>
 
 <div data-role="page" id="mainPage">
 	<div data-role="header" data-theme="b" data-position="fixed">
-		<h1>점심 메뉴 룰렛</h1>
+		<h1>오늘 점심  뭐먹지?</h1>
 	</div>
 	
 	<div data-role="main" class="ui-content" style="padding-top: 2em;">
@@ -23,7 +26,7 @@
 	</div>
 	
 	<div data-role="main" class="ui-content">
-		<a href="#goToMenuList" class="ui-btn">메뉴 추가하기</a>
+		<a href="#goToMenuList" class="ui-btn" onClick="javaScript:showMenuListAll();">메뉴 추가하기</a>
 	</div>
 	
 	<!-- <div data-role="footer">
@@ -33,4 +36,5 @@
 
 <jsp:include page="mobile_menulist.jsp" flush="false" />
 </body>
+<script src="../../resources/js/mobile_menulist.js"></script>
 </html>

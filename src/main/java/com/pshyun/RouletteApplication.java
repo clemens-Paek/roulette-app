@@ -1,13 +1,13 @@
-package com.pshyun.roulette;
+package com.pshyun;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Application {
+public class RouletteApplication {
 	
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(RouletteApplication.class, args);
 	}
 	
 }

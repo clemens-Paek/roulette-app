@@ -10,12 +10,71 @@
 		<version>1.4.0.RELEASE</version>
 	</parent>
 	
+	<dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.mysema.querydsl</groupId>
+                <artifactId>querydsl-core</artifactId>
+                <version>3.7.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mysema.querydsl</groupId>
+                <artifactId>querydsl-apt</artifactId>
+                <version>3.7.0</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.mysema.querydsl</groupId>
+                <artifactId>querydsl-jpa</artifactId>
+                <version>3.7.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mysema.querydsl</groupId>
+                <artifactId>querydsl-sql</artifactId>
+                <version>3.7.0</version>
+            </dependency>
+        </dependencies>
+	</dependencyManagement>
+	
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+        
+        <!-- Spring-boot -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+        
+        <!-- Spring-boot-Actuator -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!-- <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-remote-shell</artifactId>
+        </dependency> -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-rest</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
 		
+		<!-- jquery mobile -->
 		<dependency>
 			<groupId>org.springframework.mobile</groupId>
 			<artifactId>spring-mobile-device</artifactId>
@@ -32,6 +91,22 @@
 			<artifactId>h2</artifactId>
 		</dependency>
 		
+		<!-- querydsl -->
+		<dependency>
+			<groupId>com.mysema.querydsl</groupId>
+			<artifactId>querydsl-apt</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>com.mysema.querydsl</groupId>
+            <artifactId>querydsl-jpa</artifactId>
+        </dependency>
+        
+        <!-- Advenced dbcp -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-dbcp2</artifactId>
+        </dependency>
+		
 		<!-- jsp 파일 사용하기 위한 설정 -->
 		<dependency>
 			<groupId>org.apache.tomcat.embed</groupId>
@@ -44,12 +119,43 @@
 		</dependency>
 	</dependencies>
 	
-	<!--Spring boot project jar 생 -->
+	<!--Spring boot project jar 생성 -->
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>com.mysema.maven</groupId>
+				<artifactId>apt-maven-plugin</artifactId>
+				<executions>
+				    <execution>
+				        <id>process</id>
+				        <goals>
+				            <goal>process</goal>
+				        </goals>
+				        <!-- <configuration>
+                            <outputDirectory>target/generated-sources</outputDirectory>
+                            <processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor>
+                        </configuration>
+				        <phase>generate-sources</phase>
+				        <configuration>
+				            <sourceDirectory>src/main/java/com/pshyun/roulette/entity</sourceDirectory>
+				        </configuration> -->
+				    </execution>
+				</executions>
+				<configuration>
+				    <outputDirectory>target/generated-sources/querydsl</outputDirectory>
+                    <processors>
+				        <processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor>
+				    </processors>
+				    <options>
+				        <querydsl.entityAccessors>true</querydsl.entityAccessors>
+				        <querydsl.createDefaultVariable>true</querydsl.createDefaultVariable>
+				        <querydsl.packageSuffix>.qdsl</querydsl.packageSuffix>
+				    </options>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

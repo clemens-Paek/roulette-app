@@ -1,4 +1,4 @@
-package com.pshyun.roulette.config;
+package com.pshyun.config;
 
 import java.util.List;
 
@@ -38,7 +38,7 @@ public class DeviceConfig {
 		delegate.setPrefix("/WEB-INF/views/");
 		delegate.setSuffix(".jsp");
 		LiteDeviceDelegatingViewResolver resolver = new LiteDeviceDelegatingViewResolver(delegate);
-		/*
+		/* 모바일이나 테블릿일 때 url경로 앞에 붙이도록 하는 것.  예) localhost:8080/mobile/mindex.jsp
 		resolver.setMobilePrefix("mobile/");
 		resolver.setTabletPrefix("tablet/");
 		*/

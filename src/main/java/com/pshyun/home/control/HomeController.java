@@ -1,4 +1,4 @@
-package com.pshyun.roulette.home.control;
+package com.pshyun.home.control;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.mobile.device.Device;
