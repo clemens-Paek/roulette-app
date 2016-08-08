@@ -1,4 +1,4 @@
-package com.pshyun.config;
+package com.pshyun.config.device;
 
 import java.util.List;
 

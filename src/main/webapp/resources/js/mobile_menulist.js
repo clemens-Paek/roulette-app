@@ -34,7 +34,6 @@ function showMenuListAll() {
  * 추가 버튼 클릭
  */
 $('#btnAddMenu').click(function() {
-	alert('addMenu 들어옴!');
 	var params = {
 			"menuName": $('#menulist_inputMenuName').val()
 	};
@@ -54,6 +53,15 @@ $('#btnAddMenu').click(function() {
 			showMenuListAll();
 		}
 	});
+});
+
+/*
+ * 엔터 클릭
+ */
+$('#menulist_inputMenuName').keypress(function(e){
+	if(e.keyCode == 13){		
+		$('#btnAddMenu').click();
+	}
 });
 
 /*
@@ -80,14 +88,9 @@ function deleteMenu(menuNo) {
 	});
 }
 
-/*
- * 엔터 클릭
- */
-$('#menulist_inputMenuName').keypress(function(e){
-	if(e.keyCode == 13){		
-		$('#btnAddMenu').click();
-	}
-});
+function runRoulette() {
+	alert('룰렛 돌리기 클릭!!');
+}
 
 //초기화
 (function(){
