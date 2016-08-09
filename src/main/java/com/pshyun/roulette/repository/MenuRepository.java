@@ -10,5 +10,9 @@ import com.pshyun.roulette.entity.Menu;
 @Repository
 public interface MenuRepository extends JpaRepository<Menu, Integer> {
 	
+	List<Menu> findAll();
+	
 	List<Menu> findAllByOrderByMenuNoDesc();
+	
+	Menu findByMenuNo(Menu menu);
 }

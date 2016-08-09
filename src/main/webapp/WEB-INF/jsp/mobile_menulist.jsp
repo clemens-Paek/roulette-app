@@ -47,8 +47,9 @@
 	<div data-role="main" class="ui-content">
 		<a href="javaScript:runRoulette();" class="ui-btn ui-corner-all ui-icon-recycle ui-btn-icon-right">룰렛 돌리기!!</a>
 		
-		<div id="choosedMenuDiv" style="margin: 50px 0px 50px 0px; padding: 20px 25px 20px 25px; border-color: white;">
-			<span id="choosedMenuName" style="text-align: center; font-weight: bolder; font-size: 50px;">돈까스반찬집</span>
+		<div id="choosedMenuDiv" style="margin: 50px 0px 50px 0px; padding: 20px 25px 20px 25px; border-color: white; text-align: center;">
+            <input type="hidden" id="choosedMenuNo" value="">
+			<span id="choosedMenuName" style="text-align: center; font-weight: bolder; font-size: 50px; width: 100%;"></span>
 		</div>
 		
 		<div data-role="controlgroup" data-type="horizontal" align="center">

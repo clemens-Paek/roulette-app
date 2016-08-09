@@ -12,6 +12,7 @@ public class WebMvcConfig {
 	public ServletRegistrationBean h2servletRegistration() {
 		ServletRegistrationBean registrationBean = new ServletRegistrationBean(new WebServlet());
 		registrationBean.addUrlMappings("/h2-console/*");
+		registrationBean.addInitParameter("webAllowOthers", "true");
 		return registrationBean;
 	}
 	

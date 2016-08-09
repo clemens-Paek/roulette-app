@@ -24,7 +24,7 @@ public class EatMenu implements Serializable {
 		return new EatMenu(menuNo, menuName, eatDate);
 	}
 	
-	private EatMenu() {
+	public EatMenu() {
 		super();
 	}
 	

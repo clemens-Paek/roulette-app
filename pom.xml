@@ -51,14 +51,6 @@
         <!-- Spring-boot-Actuator -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <!-- <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-remote-shell</artifactId>
-        </dependency> -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
@@ -67,12 +59,24 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <!-- <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-remote-shell</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-rest</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
-        </dependency>
+        </dependency> -->
 		
 		<!-- jquery mobile -->
 		<dependency>
@@ -127,36 +131,20 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
-				<groupId>com.mysema.maven</groupId>
-				<artifactId>apt-maven-plugin</artifactId>
-				<executions>
-				    <execution>
-				        <id>process</id>
-				        <goals>
-				            <goal>process</goal>
-				        </goals>
-				        <!-- <configuration>
+                <groupId>com.mysema.maven</groupId>
+                <artifactId>apt-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>process</goal>
+                        </goals>
+                        <configuration>
                             <outputDirectory>target/generated-sources</outputDirectory>
                             <processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor>
                         </configuration>
-				        <phase>generate-sources</phase>
-				        <configuration>
-				            <sourceDirectory>src/main/java/com/pshyun/roulette/entity</sourceDirectory>
-				        </configuration> -->
-				    </execution>
-				</executions>
-				<configuration>
-				    <outputDirectory>target/generated-sources/querydsl</outputDirectory>
-                    <processors>
-				        <processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor</processor>
-				    </processors>
-				    <options>
-				        <querydsl.entityAccessors>true</querydsl.entityAccessors>
-				        <querydsl.createDefaultVariable>true</querydsl.createDefaultVariable>
-				        <querydsl.packageSuffix>.qdsl</querydsl.packageSuffix>
-				    </options>
-				</configuration>
-			</plugin>
+                    </execution>
+                </executions>               
+            </plugin>
 		</plugins>
 	</build>
 	

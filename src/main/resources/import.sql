@@ -12,6 +12,9 @@ INSERT INTO menu (MENU_NAME) VALUES ('교동짬뽕');
 INSERT INTO menu (MENU_NAME) VALUES ('부대찌개');
 INSERT INTO menu (MENU_NAME) VALUES ('닭갈비');
 INSERT INTO menu (MENU_NAME) VALUES ('돈까스반찬집');
+INSERT INTO menu (MENU_NAME) VALUES ('국수가');
+INSERT INTO menu (MENU_NAME) VALUES ('메뉴바뀌는집');
+INSERT INTO menu (MENU_NAME) VALUES ('분식집');
 
 --CREATE TABLE eat_menu_list (
 --  number INT NOT NULL,
@@ -19,7 +22,8 @@ INSERT INTO menu (MENU_NAME) VALUES ('돈까스반찬집');
 --  eatDate DATETIME NOT NULL
 --) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
-INSERT INTO eat_menu (MENU_NO, MENU_NAME, EAT_DATE) VALUES (2, '중국집', '2016-08-05 11:45:23');
+INSERT INTO eat_menu (MENU_NO, MENU_NAME, EAT_DATE) VALUES (1, '순대국집', '2016-08-08 11:45:23');
+INSERT INTO eat_menu (MENU_NO, MENU_NAME, EAT_DATE) VALUES (3, '교동짬뽕', '2016-08-09 11:45:23');
 
 --select menuName from menu_list
 --where number not in (select number from eat_menu_list 

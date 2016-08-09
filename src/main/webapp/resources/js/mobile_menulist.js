@@ -25,7 +25,6 @@ function showMenuListAll() {
 					+ '</tr>';
 			});
 			$('#menuListTable > tbody').html(records);
-			
 		}
 	});
 }
@@ -88,8 +87,56 @@ function deleteMenu(menuNo) {
 	});
 }
 
+/*
+ * 룰렛 돌리기
+ */
 function runRoulette() {
-	alert('룰렛 돌리기 클릭!!');
+	$('#choosedMenuNo').val('');
+	$('#choosedMenuName').html('');
+	
+	$.mobile.loading('show');
+	setTimeout(function() {
+		$.ajax({
+			type: 'POST',
+			dataType: 'JSON',
+			url: '/menu/list/roulette',
+			error: function() {
+				$.mobile.loading("hide");
+				alert("에러!!");
+			},
+			success: function(returnJSON) {
+				$.mobile.loading("hide");
+				$('#choosedMenuNo').val(returnJSON.data.menuNo);
+				$('#choosedMenuName').html(returnJSON.data.menuName);
+			}
+		});
+	}, 1000);
+}
+
+/*
+ * 정한 메뉴 저장하기
+ */
+function saveTodayMenu() {
+	var params = {
+			"menuNo": $('#choosedMenuNo').val(),
+			"menuName": $('#choosedMenuName').html()
+	}
+	
+	$.mobile.loading('show');
+	$.ajax({
+		type: 'POST',
+		dataType: 'JSON',
+		data: params,
+		url: '/menu/list/save',
+		error: function() {
+			$.mobile.loading("hide");
+			alert("에러!!");
+		},
+		success: function(returnJSON) {
+			$.mobile.loading("hide");
+			alert('저장 완료!');
+		}
+	});
 }
 
 //초기화
