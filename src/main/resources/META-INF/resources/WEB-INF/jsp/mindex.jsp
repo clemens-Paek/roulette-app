@@ -34,7 +34,7 @@
 	</div> -->
 </div>
 
-<jsp:include page="mobile_menulist.jsp" flush="false" />
+<jsp:include page="roulette/mobile_menulist.jsp" flush="false" />
 </body>
 <script src="../../js/mobile_menulist.js"></script>
 </html>

@@ -13,8 +13,16 @@ INSERT INTO menu (MENU_NAME) VALUES ('부대찌개');
 INSERT INTO menu (MENU_NAME) VALUES ('닭갈비');
 INSERT INTO menu (MENU_NAME) VALUES ('돈까스반찬집');
 INSERT INTO menu (MENU_NAME) VALUES ('국수가');
-INSERT INTO menu (MENU_NAME) VALUES ('메뉴바뀌는집');
+INSERT INTO menu (MENU_NAME) VALUES ('푸드스토리');
 INSERT INTO menu (MENU_NAME) VALUES ('분식집');
+INSERT INTO menu (MENU_NAME) VALUES ('국수전골');
+INSERT INTO menu (MENU_NAME) VALUES ('쭈꾸미');
+INSERT INTO menu (MENU_NAME) VALUES ('유메야');
+INSERT INTO menu (MENU_NAME) VALUES ('엽기떡볶이');
+INSERT INTO menu (MENU_NAME) VALUES ('말뚝이');
+INSERT INTO menu (MENU_NAME) VALUES ('돼지한근탕');
+INSERT INTO menu (MENU_NAME) VALUES ('일미정');
+INSERT INTO menu (MENU_NAME) VALUES ('닭볶음탕');
 
 --CREATE TABLE eat_menu_list (
 --  number INT NOT NULL,
