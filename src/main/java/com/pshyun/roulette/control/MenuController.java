@@ -117,7 +117,6 @@ public class MenuController {
 		}
 		
 		List<EatMenu> eatMenuList = jpaQuery.from(qEatMenu).where(qEatMenu.eatDate.between(mondayDate, sundayDate)).list(qEatMenu);
-		System.out.println("@@ eamtMenuList : " + eatMenuList.size());
 		List<Menu> menuList = null;
 		if (eatMenuList.size() > 0) {
 			Number[] intArray = new Number[eatMenuList.size()];

@@ -11,7 +11,6 @@ public class HomeController {
 	
 	@RequestMapping("/")
 	public String home(Device device) {
-		System.out.println("@@ device is mobile / tablet? : " + device.isMobile() + " / " + device.isTablet());
 		//모바일 디바이스로 접속했다면 
 		if (device.isMobile()) {
 			return "mindex";
