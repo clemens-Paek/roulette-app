@@ -23,7 +23,7 @@
 			<table data-role="table" data-mode="" class="ui-responsive table-stroke" id="menuListTable">
                 <thead>
 				    <tr>
-					   <td id="menulist_menuName" style="text-align: center; font-weight: bolder; width: 100%;" colspan="2">메  뉴</td>
+					   <td id="menulist_menuName" style="text-align: center; font-weight: bolder; width: 100%;" colspan="3">메  뉴</td>
 					   <td></td>
 				    </tr>
                 </thead>

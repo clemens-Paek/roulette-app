@@ -32,6 +32,7 @@ INSERT INTO menu (MENU_NAME) VALUES ('닭볶음탕');
 
 INSERT INTO eat_menu (MENU_NO, MENU_NAME, EAT_DATE) VALUES (1, '순대국집', '2016-08-08 11:45:23');
 INSERT INTO eat_menu (MENU_NO, MENU_NAME, EAT_DATE) VALUES (3, '교동짬뽕', '2016-08-09 11:45:23');
+INSERT INTO eat_menu (MENU_NO, MENU_NAME, EAT_DATE) VALUES (11, '쭈꾸미', '2016-08-10 11:45:23');
 
 --select menuName from menu_list
 --where number not in (select number from eat_menu_list 

@@ -18,7 +18,10 @@ function showMenuListAll() {
 			$.mobile.loading("hide");
 			$.each(returnJSON.items, function(i, menuList) {
 				records +='<tr>'
-					+ '<td style="width: 90%;"><span style="margin-left: 5px;">' + menuList.menuName + '</span></td>'
+					+ '<td style="width: 90%;"><span style="margin-left: 5px;" id="menuSpan' + menuList.menuNo + '">' + menuList.menuName + '</span></td>'
+					+ '<td id="editBtnTd' + menuList.menuNo + '">'
+					+ '<a href="#" onClick="javaScript:editMenu(' + menuList.menuNo + ', \'' + menuList.menuName + '\');" class="ui-btn ui-corner-all ui-mini ui-icon-edit ui-btn-icon-notext" style="text-align: right;"></a>'
+					+ '</td>'
 					+ '<td>'
 					+ '<a href="#" onClick="javaScript:deleteMenu(' + menuList.menuNo + ');" class="ui-btn ui-corner-all ui-mini ui-icon-delete ui-btn-icon-notext" style="text-align: right;"></a>'
 					+ '</td>'
@@ -62,6 +65,48 @@ $('#menulist_inputMenuName').keypress(function(e){
 		$('#btnAddMenu').click();
 	}
 });
+
+/*
+ * 수정 버튼 클릭
+ */
+function editMenu(menuNo, menuName) {
+	$('#menuSpan' + menuNo).html('<input type="text" style="width: 90%;" id="menuInput' + menuNo + '" value="' + menuName + '">');
+	$('#editBtnTd' + menuNo).html(
+		'<a href="#" onClick="javaScript:updateMenu(' + menuNo + ');" '
+		+ 'class="ui-btn ui-btn-b ui-corner-all ui-mini ui-icon-check ui-btn-icon-notext" style="text-align: right;"></a>'	
+	);
+}
+
+/*
+ * 업데이트 버튼 클릭
+ */
+function updateMenu(menuNo) {
+	var menuName = $('#menuInput' + menuNo).val();
+	var params = {
+			"menuNo": menuNo,
+			"menuName": menuName
+	};
+	
+	$.mobile.loading('show');
+	$.ajax({
+		type: 'POST',
+		dataType: 'JSON',
+		data: params,
+		url: '/menu/list/update',
+		error: function() {
+			$.mobile.loading("hide");
+			alert("에러!!");
+		},
+		success: function(returnJSON) {
+			$.mobile.loading("hide");
+			$('#menuSpan' + menuNo).html(menuName);
+			$('#editBtnTd' + menuNo).html(
+				'<a href="#" onClick="javaScript:editMenu(' + menuNo + ', \'' + menuName + '\');" '
+				+ 'class="ui-btn ui-corner-all ui-mini ui-icon-edit ui-btn-icon-notext" style="text-align: right;"></a>'
+			);
+		}
+	});
+}
 
 /*
  * 삭제 버튼 클릭

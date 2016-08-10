@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -153,6 +154,28 @@ public class MenuController {
 		eatMenu.setMenuName(menuName);
 		eatMenu.setEatDate(DateUtils.getDateTimeString());
 		eatMenuService.save(eatMenu);
+		
+		resultJSON.setSuccess(true);
+		return resultJSON;
+	}
+	
+	/**
+	 * 메뉴 이름 수정하기
+	 * @param request
+	 * @param menuNo
+	 * @param menuName
+	 * @return
+	 */
+	@RequestMapping(value = "/update", method = RequestMethod.POST)
+	@ResponseBody
+	@Transactional
+	public ResultJSON updateMenu(HttpServletRequest request, @RequestParam int menuNo, @RequestParam String menuName) {
+		ResultJSON resultJSON = new ResultJSON();
+		int result = em.createQuery("UPDATE menu SET menu_name = '" + menuName + "' WHERE menu_no = " + menuNo).executeUpdate();
+		if (1 != result) {
+			resultJSON.setSuccess(false);
+			return resultJSON;
+		}
 		
 		resultJSON.setSuccess(true);
 		return resultJSON;
