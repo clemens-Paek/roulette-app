@@ -22,7 +22,7 @@
 	</div>
 	
 	<div data-role="main" class="ui-content" style="padding-top: 2em;">
-		<a href="#goToRoulette" class="ui-btn">메뉴 고르기</a>
+		<a href="#goToRoulette" class="ui-btn" onClick="javaScript:initChoosedMenuName();">메뉴 고르기</a>
 	</div>
 	
 	<div data-role="main" class="ui-content">

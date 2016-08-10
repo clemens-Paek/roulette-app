@@ -1,3 +1,7 @@
+/**
+ * 메뉴 정하기
+ * @returns
+ */
 
 /*
  * "메뉴 추가하기" or "새로고침" 버튼 클릭
@@ -182,6 +186,13 @@ function saveTodayMenu() {
 			alert('저장 완료!');
 		}
 	});
+}
+
+/*
+ * 선택된 메뉴이름 초기화
+ */
+function initChoosedMenuName() {
+	$('#choosedMenuName').html('');
 }
 
 //초기화
